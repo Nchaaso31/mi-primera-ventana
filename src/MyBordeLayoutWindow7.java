@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class septimoEjercicio7 {
+public class MyBordeLayoutWindow7 {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setBounds(10, 10, 550, 300);
@@ -12,6 +12,7 @@ public class septimoEjercicio7 {
         JPanel panel = new JPanel();
         panel.setBackground(Color.blue);
         panel.setLayout(new BorderLayout(10,10));
+//        Preguntar porque los botones del centro son mas grandes que los de arriba y abajo
 
         JButton northBorder = new JButton("Hidde North Border");
         JButton westBorder = new JButton("Hidde West Border");
