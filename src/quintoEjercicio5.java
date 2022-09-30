@@ -12,7 +12,7 @@ public class quintoEjercicio5 {
         panel.setBackground(Color.BLUE);
 
         JPanel panel1 = new JPanel();
-        panel1.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.green,1,true), "SEACH"));
+        panel1.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.green,2,true), "SEACH"));
 //        panel1.setBorder(BorderFactory.createTitledBorder("Seach"));
         panel1.setBounds(50, 50, 200, 300);
 
