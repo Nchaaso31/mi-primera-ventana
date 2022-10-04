@@ -16,13 +16,14 @@ public class GridBagLayoutWindow2 {
                new GridBagConstraints(
                        0,
                        0,
+//                       lo que ocupa de ancho y de alto widht y height
                        2,
                        2,
-                       1.0,
-                       1.0,
+                       5,
+                       1,
                        GridBagConstraints.CENTER,
                        GridBagConstraints.BOTH,
-                       new Insets(0,0,0,0),
+                       new Insets(5,5,5,5),
                        0,
                        0));
 
@@ -36,8 +37,8 @@ public class GridBagLayoutWindow2 {
                         1.0,
                         1.0,
                         GridBagConstraints.NORTH,
-                        GridBagConstraints.CENTER,
-                        new Insets(0,0,0,0),
+                        GridBagConstraints.HORIZONTAL,
+                        new Insets(5,5,5,5),
                         0,
                         0
                 ));
@@ -51,8 +52,8 @@ public class GridBagLayoutWindow2 {
                             1.0,
                             1.0,
                             GridBagConstraints.NORTH,
-                            GridBagConstraints.CENTER,
-                            new Insets(0,0,0,0),
+                            GridBagConstraints.HORIZONTAL,
+                            new Insets(5,5,5,5),
                             0,
                             0
                     ));
@@ -63,10 +64,10 @@ public class GridBagLayoutWindow2 {
                             1,
                             1,
                             1.0,
-                            1.0,
-                            GridBagConstraints.NORTH,
+                            0.25,
+                            GridBagConstraints.CENTER,
                             GridBagConstraints.HORIZONTAL,
-                            new Insets(0,0,0,0),
+                            new Insets(5,5,5,5),
                             0,
                             0));
 
@@ -77,11 +78,11 @@ public class GridBagLayoutWindow2 {
                         2,
                         1,
                         1,
-                        40.0,
-                        1.0,
-                        GridBagConstraints.NORTH,
+                        4,
+                        1,
+                        GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0,0,0,0),
+                        new Insets(5,5,5,5),
                         0,
                         0));
 
@@ -95,10 +96,10 @@ public class GridBagLayoutWindow2 {
                             1,
                             1,
                             1.0,
-                            1.0,
-                            GridBagConstraints.NORTH,
+                            0.25,
+                            GridBagConstraints.CENTER,
                             GridBagConstraints.HORIZONTAL,
-                            new Insets(0,0,0,0),
+                            new Insets(5,5,5,5),
                             0,
                             0
                     ));
