@@ -96,7 +96,7 @@ public class GridBagLayoutWindow4 {
                         0,
                         0));
 
-        panel.add(new JTextField(),
+        panel.add(new JPasswordField(),
                 new GridBagConstraints(
                         1,
                         2,
@@ -123,7 +123,7 @@ public class GridBagLayoutWindow4 {
                         new Insets(5,5,5,5),
                         0,
                         0));
-        panel.add(new JTextField(),
+        panel.add(new JScrollPane(new JTextField()),
                 new GridBagConstraints(
                         1,
                         4,
@@ -136,6 +136,7 @@ public class GridBagLayoutWindow4 {
                         new Insets(5,5,5,5),
                         0,
                         0));
+
 
 
         panel.add(new JLabel("City"),
@@ -241,6 +242,7 @@ public class GridBagLayoutWindow4 {
                         new Insets(5,5,5,5),
                         0,
                         0));
+
 
 
 
