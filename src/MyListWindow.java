@@ -1,7 +1,8 @@
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class MyListWindow {
     public static void main(String[] args) {
@@ -22,12 +23,26 @@ public class MyListWindow {
         jListLabel.setPreferredSize(new Dimension(200, 80));
         jListLabel.setBorder(BorderFactory.createLoweredBevelBorder());
         labelPanel.add(jListLabel);
+        jListLabel.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                jListLabel.setForeground(Color.red);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                jListLabel.setForeground(Color.black);
+            }
+        });
+
 
         mainPanel.add(labelPanel, BorderLayout.NORTH);
 
         DefaultListModel<String> peopleModel = new DefaultListModel<>();
         peopleModel.addElement("Christian David");
         peopleModel.addElement("Ana Milena");
+
 
         JPanel listPanel = new JPanel(new BorderLayout());
         JPanel addOptionPanel = new JPanel();
@@ -80,6 +95,24 @@ public class MyListWindow {
         });
         buttonsPanel.add(clearButton);
         mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
+
+
+        JPanel panl2 = new JPanel();
+        JLabel labelAñadir = new JLabel();
+        labelAñadir.setFont(new Font("Calibri", Font.PLAIN, 6));
+        labelAñadir.setPreferredSize(new Dimension(100, 40));
+        labelAñadir.setBorder(BorderFactory.createLoweredBevelBorder());
+//        labelAñadir.
+        panl2.add(labelAñadir);
+        labelPanel.add(panl2);
+
+        peopleList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent listSelectionEvent) {
+                String valor = peopleList.getSelectedValue();
+                labelAñadir.setText("Se ha agregado un nuevo elemento: " + valor);
+            }
+        });
 
 
         f.setContentPane(mainPanel);
