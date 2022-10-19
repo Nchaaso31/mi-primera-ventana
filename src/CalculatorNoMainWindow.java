@@ -37,6 +37,7 @@ public class CalculatorNoMainWindow extends JFrame {
                 10, 10, 500, 300
         );
         setTitle("Calculadora");
+
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
