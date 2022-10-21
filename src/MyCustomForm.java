@@ -75,7 +75,7 @@ public class MyCustomForm extends JFrame {
 
     private JPanel createMainPanel() {
         mainPanel = new JPanel(new BorderLayout());
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
         mainPanel.add(createButtons(), BorderLayout.NORTH);
         mainPanel.add(createJLabelWest(), BorderLayout.WEST);
         mainPanel.add(panelCentral(), BorderLayout.CENTER);
@@ -91,6 +91,10 @@ public class MyCustomForm extends JFrame {
         comboBox1.addItem("UK");
         comboBox1.addItem("EEUU");
         comboBox1.addItem("Portugal");
+        comboBox1.addItem("Norway");
+        comboBox1.addItem("Russia");
+        comboBox1.addItem("Ukraine");
+        comboBox1.addItem("China");
         comboBox1.setEnabled(false);
         return comboBox1;
     }
@@ -141,16 +145,18 @@ public class MyCustomForm extends JFrame {
         panel3 = new JPanel(new GridBagLayout());
         panel3.add(createChekboxname(), addOnPositionCenter(0, 0, 1, 1));
         panel3.add(createChekboxAddress(), addOnPositionCenter(0, 1, 1, 1));
-        panel3.add(labelCity(), addOnPositionCenter(0, 2, 5, 1));
+        panel3.add(labelCity(), addOnPositionCenter(0, 2, 1, 1));
         panel3.add(createChekboxDescription(), addOnPositionCenter(0, 3, 1, 1));
         panel3.add(createTextfiel1(), addOnPositionCenter(1, 0, 6, 1));
         panel3.add(createTextfield2(), addOnPositionCenter(1, 1, 6, 1));
         panel3.add(createTextfiel3(), addOnPositionCenter(1, 2, 5, 1));
-        panel3.add(createArea1(), addOnPositionCenter(1, 3, 6, 3));
-        panel3.add(createCombox(), addOnPositionCenter(6, 2, 1, 1)); //el problema es este tengo que poner 6 pero no me lo posiciona bien
-        panel3.add(createButtonOptionSave(), addOnPositionCenter(6, 7, 1, 1));
-        panel3.add(radioButtonActive(), addOnPositionCenter(1, 6, 1, 1));
-        panel3.add(radioButtonInactive(), addOnPositionCenter(6, 6, 1, 1));
+        panel3.add(createArea1(), addOnPositionArea(1, 3, 6, 4));
+        panel3.add(createCombox(), addOnPositionCenter(6, 2, 1, 1));
+        panel3.add(createButtonOptionSave(), addOnPositionCenter(6, 8, 1, 1));
+
+        buttonGrou =new ButtonGroup();
+        panel3.add(radioButtonActive(), addOnPositionCenter(1, 7, 1, 1));
+        panel3.add(radioButtonInactive(), addOnPositionCenter(6, 7, 1, 1));
 
 
         return panel3;
@@ -159,6 +165,8 @@ public class MyCustomForm extends JFrame {
 
     private JCheckBox createChekboxDescription() {
         checkbocxDescription = new JCheckBox("Description");
+        checkbocxDescription.setHorizontalAlignment(SwingConstants.CENTER);
+
         checkbocxDescription.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -175,11 +183,15 @@ public class MyCustomForm extends JFrame {
 
     private JLabel labelCity() {
         labelCity = new JLabel("City");
+        labelCity.setHorizontalAlignment(SwingConstants.CENTER);
+
         return labelCity;
     }
 
     private JCheckBox createChekboxAddress() {
         checkbocxAdress = new JCheckBox("Address");
+        checkbocxAdress.setHorizontalAlignment(SwingConstants.CENTER);
+
         checkbocxAdress.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -196,6 +208,7 @@ public class MyCustomForm extends JFrame {
 
     private JCheckBox createChekboxname() {
         checkbocxName = new JCheckBox("Name");
+        checkbocxName.setHorizontalAlignment(SwingConstants.CENTER);
         checkbocxName.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -375,8 +388,23 @@ public class MyCustomForm extends JFrame {
                 width,
                 height,
                 1,
-                1,
+                0,
                 GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH,
+                new Insets(1, 1, 1, 1),
+                0,
+                0
+        );
+    }
+    private GridBagConstraints addOnPositionArea(int x, int y, int width, int height) {
+        return new GridBagConstraints(
+                x,
+                y,
+                width,
+                height,
+                1,
+                1,
+                GridBagConstraints.WEST,
                 GridBagConstraints.BOTH,
                 new Insets(1, 1, 1, 1),
                 0,
@@ -407,14 +435,9 @@ public class MyCustomForm extends JFrame {
     }
 
 
-    private ButtonGroup buttonGroups(){
-        buttonGrou = new ButtonGroup();
-        buttonGrou.add(radioActive);
-        buttonGrou.add(radioInactive);
-        return buttonGrou;
-    }
     private JRadioButton radioButtonActive() {
         radioActive = new JRadioButton("Active");
+        buttonGrou.add(radioActive);
         radioActive.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -428,6 +451,7 @@ public class MyCustomForm extends JFrame {
 
     private JRadioButton radioButtonInactive() {
         radioInactive = new JRadioButton("Inactive");
+        buttonGrou.add(radioInactive);
         radioInactive.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
